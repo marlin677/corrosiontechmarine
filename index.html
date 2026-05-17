@@ -1,1 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrosion Tech Marine | Premium Marine Protection NZ</title>
+    
+    <link href="https://db.onlinewebfonts.com/c/49fdec8ee8568aaf58534b3ede38e294?family=Industry-Bold" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --accent-red: #da222a;
+            --accent-glow: rgba(218, 34, 42, 0.4);
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border-color: #30363d;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Font Application */
+        h1, h2, h3, .nav-logo, .btn, .stat-number {
+            font-family: "Industry-Bold", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: rgba(13, 17, 23, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo span {
+            color: var(--accent-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+            border-bottom: 2px solid var(--accent-red);
+            padding-bottom: 4px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1b212c 0%, var(--bg-dark) 70%);
+            position: relative;
+        }
+
+        /* Logo Styling */
+        .hero-logo {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 25px var(--accent-glow));
+            border-radius: 8px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 span {
+            color: var(--accent-red);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-red) 0%, #a3141a 100%);
+            color: white;
+            padding: 0.8rem 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px var(--accent-glow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(218, 34, 42, 0.6);
+        }
+
+        /* Features/Info Section */
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background-color: var(--accent-red);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Mission Banner */
+        .banner {
+            background: linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200') center/cover no-repeat;
+            padding: 6rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #090c10;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-logo { max-width: 320px; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            .banner h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Corrosion Tech <span>Marine</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="https://raw.githubusercontent.com/marlin677/monkeynigga1/main/corro_techlogo.png" alt="Corrosion Tech Marine Logo" class="hero-logo">
+        
+        <h1>Heavy Duty <span>Protection</span></h1>
+        <p>Engineered to stop rust dead in its tracks. From the hulls of hard-fished alloys to high-performance marine setups, we keep your gear bulletproof against the salt.</p>
+        <a href="#contact" class="btn">Get Protected</a>
+    </section>
+
+    <section class="banner">
+        <h2>Built For Anglers Across NZ</h2>
+        <p>Whether you're launching a kayak into the surf, chasing massive Kingfish out wide, or running a commercial vessel, New Zealand conditions demand elite corrosion defense.</p>
+    </section>
+
+    <section class="features" id="services">
+        <div class="card">
+            <h3>Marine Coatings</h3>
+            <p>Advanced shield barriers designed specifically for saltwater environments. Keeps your outboards, trailers, and hulls looking clean and running flawlessly.</p>
+        </div>
+        <div class="card">
+            <h3>Alloy Defense</h3>
+            <p>Eradicate galvanic corrosion where stainless steel meets aluminum. Essential structural protection for customized Kiwi fishing rigs.</p>
+        </div>
+        <div class="card">
+            <h3>Gear Longevity</h3>
+            <p>Formulated to penetrate deep into high-stress mechanical components, ensuring your hardware survives season after season of heavy coastal abuse.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 Corrosion Tech Marine. All Rights Reserved.</p>
+        <p>Premium Anti-Corrosion Solutions &bull; Proudly New Zealand Operated</p>
+    </footer>
+
+</body>
+</html>
